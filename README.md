@@ -14,7 +14,7 @@ Mobile App Face Emotion with Microsoft Emotion API
 > https://github.com/HomeRuk/FaceEmotion/blob/master/apk/FaceEmotion_1.0.apk
 
 # Detail Emotion 
-> Emotion display percent > 60 
+> Emotion display percent > 60 แสดงอารมณ์ความรู้สึกเมือมีความรู้สึกนั้น มากกว่า60 %
 - anger โกรธ 
 - contempt กำลังดูถูกคน
 - disgust รังเกียจ
