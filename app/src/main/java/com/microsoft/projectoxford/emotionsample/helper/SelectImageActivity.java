@@ -48,12 +48,8 @@ import java.io.IOException;
 
 // The activity for the user to select a image and to detect faces in the image.
 public class SelectImageActivity extends ActionBarActivity {
-    // Flag to indicate the request of the next task to be performed
-    private static final int REQUEST_TAKE_PHOTO = 0;
-    private static final int REQUEST_SELECT_IMAGE_IN_ALBUM = 1;
 
-    // The URI of photo taken with camera
-    private Uri mUriPhotoTaken;
+    private static final int REQUEST_SELECT_IMAGE_IN_ALBUM = 1;
 
     // When the activity is created, set all the member variables to initial state.
     @Override
@@ -67,15 +63,11 @@ public class SelectImageActivity extends ActionBarActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         switch (requestCode)
         {
-            case REQUEST_TAKE_PHOTO:
             case REQUEST_SELECT_IMAGE_IN_ALBUM:
                 if (resultCode == RESULT_OK) {
                     Uri imageUri;
-                    if (data == null || data.getData() == null) {
-                        imageUri = mUriPhotoTaken;
-                    } else {
                         imageUri = data.getData();
-                    }
+
                     Intent intent = new Intent();
                     intent.setData(imageUri);
                     setResult(RESULT_OK, intent);
