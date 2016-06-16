@@ -3,6 +3,7 @@
     android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="#ffffff"
     android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity">
 
     <ScrollView
@@ -17,7 +18,7 @@
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Select Image"
+                    android:text="เลือกรูปภาพ"
                     android:id="@+id/buttonSelectImage"
                     android:onClick="selectImage"
                     android:layout_below="@+id/selectedImage"
@@ -31,18 +32,19 @@
                     android:layout_alignParentTop="true"
                     android:layout_centerHorizontal="true" />
 
-                <EditText
+                <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textMultiLine"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
                     android:ems="10"
-                    android:id="@+id/editTextResult"
-                    android:layout_weight="1"
-                    android:layout_below="@+id/buttonSelectImage"
-                    android:layout_alignParentStart="true" />
+                    android:id="@+id/textViewResult"
+                    android:layout_below="@+id/buttonSelectImage" />
 
         </RelativeLayout>
     </ScrollView>
+
+
 </RelativeLayout>
 
 

@@ -13,8 +13,10 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
+//import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.microsoft.projectoxford.emotion.EmotionServiceClient;
@@ -45,7 +47,7 @@ public class MainActivity extends Activity {
     private Bitmap mBitmap;
 
     // The edit to show status and result.
-    private EditText mEditText;
+    private TextView mTextView;
 
     private EmotionServiceClient client;
 
@@ -59,7 +61,13 @@ public class MainActivity extends Activity {
         }
 
         mButtonSelectImage = (Button) findViewById(R.id.buttonSelectImage);
-        mEditText = (EditText) findViewById(R.id.editTextResult);
+        mTextView = (TextView) findViewById(R.id.textViewResult);
+        String text = "แอปพลิเคชันวิเคราะห์อารมณ์จากรูปภาพ";
+        Toast toast = Toast.makeText(MainActivity.this, text, Toast.LENGTH_LONG);
+        toast.show();
+        String text2 = "กรุณาเลือกรูปภาพ เพื่อวิเคราะห์อารมณ์";
+        Toast toast2 = Toast.makeText(MainActivity.this, text2, Toast.LENGTH_LONG);
+        toast2.show();
     }
 
     public void doRecognize() {
@@ -69,13 +77,13 @@ public class MainActivity extends Activity {
         try {
             new doRequest(false).execute();
         } catch (Exception e) {
-            mEditText.append("Error encountered. Exception is: " + e.toString());
+            mTextView.append("Error encountered. Exception is: " + e.toString());
         }
     }
 
     // Called when the "Select Image" button is clicked.
     public void selectImage(View view) {
-        mEditText.setText("");
+        mTextView.setText("");
 /*
         Intent intent;
         intent = new Intent(MainActivity.this, com.microsoft.projectoxford.emotionsample.helper.SelectImageActivity.class);
@@ -183,11 +191,11 @@ public class MainActivity extends Activity {
             // Display based on error existence
 
             if (e != null) {
-                mEditText.setText("Error: " + e.getMessage());
+                mTextView.setText("Error: " + e.getMessage());
                 this.e = null;
             } else {
                 if (result.size() == 0) {
-                    mEditText.append("No emotion detected :(");
+                    mTextView.append("No emotion detected :(");
                 } else {
                     Integer count = 0;
                     // Covert bitmap to a mutable bitmap by copying it
@@ -200,16 +208,16 @@ public class MainActivity extends Activity {
                     paint.setColor(Color.RED);
 
                     for (RecognizeResult r : result) {
-                        mEditText.append(String.format("Face #%1$d \n", count+1));
-                        if(r.scores.anger > 0.60)          mEditText.append(String.format("\t Emotion anger : %.2f %%\n", r.scores.anger*100));
-                        else if (r.scores.contempt > 0.60) mEditText.append(String.format("\t Emotion contempt : %.2f %%\n", r.scores.contempt*100));
-                        else if (r.scores.disgust > 0.60)  mEditText.append(String.format("\t Emotion disgust : %.2f %%\n", r.scores.disgust*100));
-                        else if (r.scores.fear > 0.60)     mEditText.append(String.format("\t Emotion fear : %.2f %%\n", r.scores.fear*100));
-                        else if (r.scores.happiness > 0.60)mEditText.append(String.format("\t Emotion happiness : %.2f %%\n", r.scores.happiness*100));
-                        else if (r.scores.neutral > 0.60)  mEditText.append(String.format("\t Emotion neutral : %.2f %%\n", r.scores.neutral*100));
-                        else if (r.scores.sadness > 0.60)  mEditText.append(String.format("\t Emotion sadness : %.2f %%\n", r.scores.sadness*100));
-                        else if (r.scores.surprise > 0.60) mEditText.append(String.format("\t Emotion surprise : %.2f %%\n", r.scores.surprise*100));
-                        else mEditText.append(String.format("\t Not found Face Emotion \n"));
+                        mTextView.append(String.format("ใบหน้าที่ %1$d -->", count+1));
+                        if(r.scores.anger > 0.60)          mTextView.append(String.format("\t โกรธ : \t%.2f %%\n", r.scores.anger*100));
+                        else if (r.scores.contempt > 0.60) mTextView.append(String.format("\t กำลังดูถูกคน : \t%.2f %%\n", r.scores.contempt*100));
+                        else if (r.scores.disgust > 0.60)  mTextView.append(String.format("\t รังเกียจ : \t%.2f %%\n", r.scores.disgust*100));
+                        else if (r.scores.fear > 0.60)     mTextView.append(String.format("\t กลัว : \t%.2f %%\n", r.scores.fear*100));
+                        else if (r.scores.happiness > 0.60)mTextView.append(String.format("\t มีความสุข : \t%.2f %%\n", r.scores.happiness*100));
+                        else if (r.scores.neutral > 0.60)  mTextView.append(String.format("\t นิ่งเฉย : \t%.2f %%\n", r.scores.neutral*100));
+                        else if (r.scores.sadness > 0.60)  mTextView.append(String.format("\t โศกเศร้า : \t%.2f %%\n", r.scores.sadness*100));
+                        else if (r.scores.surprise > 0.60) mTextView.append(String.format("\t เซอร์ไพร์ : \t%.2f %%\n", r.scores.surprise*100));
+                        else mTextView.append(String.format("\t ไม่พบอารมณ์ความรู้สึก \n"));
 
                         faceCanvas.drawRect(r.faceRectangle.left,
                                 r.faceRectangle.top,
@@ -221,7 +229,7 @@ public class MainActivity extends Activity {
                     ImageView imageView = (ImageView) findViewById(R.id.selectedImage);
                     imageView.setImageDrawable(new BitmapDrawable(getResources(), mBitmap));
                 }
-                mEditText.setSelection(0);
+                //mTextView.setSelection(0);
             }
 
             mButtonSelectImage.setEnabled(true);
