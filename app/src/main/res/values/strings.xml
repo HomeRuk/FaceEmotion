@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Project Oxford Emotion Samples</string>
+    <string name="app_name">Face Emotion</string>
 
     <!-- Emotion subscription key -->
     <!-- Please refer to https://www.projectoxford.ai/ to get your subscription key -->
