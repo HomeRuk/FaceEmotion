@@ -3,9 +3,9 @@ Android Project
 
 Mobile App Face Emotion with Microsoft Emotion API
 
-Install versions english /apk/FaceEmotion_1.0.apk
-or
-ติดตั้ง เวอร์ชันไทย /apk/FaceEmotion_1.1.apk
+> Install versions english /apk/FaceEmotion_1.0.apk
+> or
+> ติดตั้ง เวอร์ชันไทย /apk/FaceEmotion_1.1.apk
 
 # Detail Emotion 
 > Emotion display percent > 60 
