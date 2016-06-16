@@ -20,5 +20,4 @@
             android:onClick="selectImageInAlbum"
             style="@style/ButtonStyle" />
 
-
 </RelativeLayout>
