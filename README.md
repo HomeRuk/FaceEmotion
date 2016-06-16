@@ -1,2 +1,6 @@
 # FaceEmotion
-Create Android Project Face Emotion
+Android Project Face Emotion
+
+Mobile App Face Emotion with Microsoft Emotion API
+
+Install /apk/FaceEmotion.apk
