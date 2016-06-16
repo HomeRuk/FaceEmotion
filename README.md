@@ -16,4 +16,8 @@ Install /apk/FaceEmotion.apk
 - sadness
 - surprise
 
+Photo of FaceEmotion APP
+
+<img src="img/S.png" width="30%"/> <img src="img/2.png" width="30%"/>
+
 Write by Wisit lertsaimarn  (Ruk)
