@@ -6,7 +6,7 @@ Mobile App Face Emotion with Microsoft Emotion API
 Install /apk/FaceEmotion.apk
 
 # Detail Emotion 
-> Emotion percent display > 60 
+> Emotion display percent > 60 
 - anger 
 - contempt
 - disgust 
