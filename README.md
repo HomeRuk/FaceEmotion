@@ -1,5 +1,5 @@
 # FaceEmotion
-Android Project Face Emotion
+Android Project 
 
 Mobile App Face Emotion with Microsoft Emotion API
 
@@ -15,3 +15,5 @@ Install /apk/FaceEmotion.apk
 - neutral
 - sadness
 - surprise
+
+Write by Wisit lertsaimarn  (Ruk)
