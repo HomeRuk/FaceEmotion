@@ -24,13 +24,11 @@ Mobile App Face Emotion with Microsoft Emotion API
 - sadness โศกเศร้า 
 - surprise เซอร์ไพร์ 
 
-Photo of FaceEmotion APP
-
-- versions english
+# Photo versions english
 
 <img src="img/1_EN.png" width="30%"/> <img src="img/2_EN.png" width="30%"/>
 
-- เวอร์ชันไทย
+# รูปเวอร์ชันไทย
 
 <img src="img/1_TH.png" width="30%"/> <img src="img/2_TH.png" width="30%"/>
 
