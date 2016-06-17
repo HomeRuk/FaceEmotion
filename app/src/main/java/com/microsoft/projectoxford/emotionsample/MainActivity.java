@@ -3,9 +3,6 @@ package com.microsoft.projectoxford.emotionsample;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Paint;
 import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.AsyncTask;
@@ -13,7 +10,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-//import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -35,8 +31,6 @@ public class MainActivity extends Activity {
     // Flag to indicate which task is to be performed.
     private static final int REQUEST_SELECT_IMAGE = 0;
 
-    private static final int REQUEST_SELECT_IMAGE_IN_ALBUM = 1;
-
     // The button to select an image
     private Button mButtonSelectImage;
 
@@ -51,6 +45,8 @@ public class MainActivity extends Activity {
 
     private EmotionServiceClient client;
 
+    private String textIntro = "แอปพลิเคชันวิเคราะห์อารมณ์จากรูปภาพ";
+    private String textIntro2 = "กรุณาเลือกรูปภาพ เพื่อวิเคราะห์อารมณ์";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,12 +58,12 @@ public class MainActivity extends Activity {
 
         mButtonSelectImage = (Button) findViewById(R.id.buttonSelectImage);
         mTextView = (TextView) findViewById(R.id.textViewResult);
-        String text = "แอปพลิเคชันวิเคราะห์อารมณ์จากรูปภาพ";
-        Toast toast = Toast.makeText(MainActivity.this, text, Toast.LENGTH_LONG);
-        toast.show();
-        String text2 = "กรุณาเลือกรูปภาพ เพื่อวิเคราะห์อารมณ์";
-        Toast toast2 = Toast.makeText(MainActivity.this, text2, Toast.LENGTH_LONG);
-        toast2.show();
+
+        Toast toastIntro = Toast.makeText(MainActivity.this, textIntro, Toast.LENGTH_LONG);
+        toastIntro.show();
+
+        Toast toastIntro2 = Toast.makeText(MainActivity.this, textIntro2, Toast.LENGTH_LONG);
+        toastIntro2.show();
     }
 
     public void doRecognize() {
@@ -75,7 +71,7 @@ public class MainActivity extends Activity {
 
         // Do emotion detection using auto-detected faces.
         try {
-            new doRequest(false).execute();
+            new doRequest().execute();
         } catch (Exception e) {
             mTextView.append("Error encountered. Exception is: " + e.toString());
         }
@@ -84,10 +80,6 @@ public class MainActivity extends Activity {
     // Called when the "Select Image" button is clicked.
     public void selectImage(View view) {
         mTextView.setText("");
-/*
-        Intent intent;
-        intent = new Intent(MainActivity.this, com.microsoft.projectoxford.emotionsample.helper.SelectImageActivity.class);
-        startActivityForResult(intent, REQUEST_SELECT_IMAGE);*/
         Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
         intent.setType("image/*");
         if (intent.resolveActivity(getPackageManager()) != null) {
@@ -106,8 +98,7 @@ public class MainActivity extends Activity {
                     // If image is selected successfully, set the image URI and bitmap.
                     mImageUri = data.getData();
 
-                    mBitmap = ImageHelper.loadSizeLimitedBitmapFromUri(
-                            mImageUri, getContentResolver());
+                    mBitmap = ImageHelper.loadSizeLimitedBitmapFromUri(mImageUri, getContentResolver());
                     if (mBitmap != null) {
                         // Show the image on screen.
                         ImageView imageView = (ImageView) findViewById(R.id.selectedImage);
@@ -138,10 +129,6 @@ public class MainActivity extends Activity {
         ByteArrayInputStream inputStream = new ByteArrayInputStream(output.toByteArray());
 
         long startTime = System.currentTimeMillis();
-        // -----------------------------------------------------------------------
-        // KEY SAMPLE CODE STARTS HERE
-        // -----------------------------------------------------------------------
-
         List<RecognizeResult> result = null;
         //
         // Detect emotion by auto-detecting faces in the image.
@@ -150,38 +137,22 @@ public class MainActivity extends Activity {
 
         String json = gson.toJson(result);
         Log.d("result", json);
-
         Log.d("emotion", String.format("Detection done. Elapsed time: %d ms", (System.currentTimeMillis() - startTime)));
-        // -----------------------------------------------------------------------
-        // KEY SAMPLE CODE ENDS HERE
-        // -----------------------------------------------------------------------
+
         return result;
     }
 
     private class doRequest extends AsyncTask<String, String, List<RecognizeResult>> {
         // Store error message
         private Exception e = null;
-        private boolean useFaceRectangles = false;
-
-        public doRequest(boolean useFaceRectangles) {
-            this.useFaceRectangles = useFaceRectangles;
-        }
 
         @Override
         protected List<RecognizeResult> doInBackground(String... args) {
-            if (this.useFaceRectangles == false) {
                 try {
                     return processWithAutoFaceDetection();
                 } catch (Exception e) {
                     this.e = e;    // Store error
                 }
-            } else {
-                try {
-                    return processWithAutoFaceDetection();
-                } catch (Exception e) {
-                    this.e = e;    // Store error
-                }
-            }
             return null;
         }
 
@@ -189,49 +160,38 @@ public class MainActivity extends Activity {
         protected void onPostExecute(List<RecognizeResult> result) {
             super.onPostExecute(result);
             // Display based on error existence
-
             if (e != null) {
-                mTextView.setText("Error: " + e.getMessage());
+                //mTextView.setText("เกิดข้อผิดพลาด: " + e.getMessage());
+                mTextView.setText("เกิดข้อผิดพลาด: " + e.getMessage());
                 this.e = null;
             } else {
                 if (result.size() == 0) {
-                    mTextView.append("No emotion detected :(");
+                    mTextView.append("ไม่พบใบหน้า !!! :(");
                 } else {
-                    Integer count = 0;
-                    // Covert bitmap to a mutable bitmap by copying it
-                    Bitmap bitmapCopy = mBitmap.copy(Bitmap.Config.ARGB_8888, true);
-                    Canvas faceCanvas = new Canvas(bitmapCopy);
-                    faceCanvas.drawBitmap(mBitmap, 0, 0, null);
-                    Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
-                    paint.setStyle(Paint.Style.STROKE);
-                    paint.setStrokeWidth(5);
-                    paint.setColor(Color.RED);
+                    int count = 0;
+
+                    Toast toastReselt = Toast.makeText(MainActivity.this, "วิเคราะห์สำเร็จ เย้ๆ", Toast.LENGTH_LONG);
+                    toastReselt.show();
 
                     for (RecognizeResult r : result) {
                         mTextView.append(String.format("ใบหน้าที่ %1$d -->", count+1));
-                        if(r.scores.anger > 0.60)          mTextView.append(String.format("\t โกรธ : \t%.2f %%\n", r.scores.anger*100));
-                        else if (r.scores.contempt > 0.60) mTextView.append(String.format("\t กำลังดูถูกคน : \t%.2f %%\n", r.scores.contempt*100));
-                        else if (r.scores.disgust > 0.60)  mTextView.append(String.format("\t รังเกียจ : \t%.2f %%\n", r.scores.disgust*100));
-                        else if (r.scores.fear > 0.60)     mTextView.append(String.format("\t กลัว : \t%.2f %%\n", r.scores.fear*100));
-                        else if (r.scores.happiness > 0.60)mTextView.append(String.format("\t มีความสุข : \t%.2f %%\n", r.scores.happiness*100));
-                        else if (r.scores.neutral > 0.60)  mTextView.append(String.format("\t นิ่งเฉย : \t%.2f %%\n", r.scores.neutral*100));
-                        else if (r.scores.sadness > 0.60)  mTextView.append(String.format("\t โศกเศร้า : \t%.2f %%\n", r.scores.sadness*100));
-                        else if (r.scores.surprise > 0.60) mTextView.append(String.format("\t เซอร์ไพร์ : \t%.2f %%\n", r.scores.surprise*100));
-                        else mTextView.append(String.format("\t ไม่พบอารมณ์ความรู้สึก \n"));
 
-                        faceCanvas.drawRect(r.faceRectangle.left,
-                                r.faceRectangle.top,
-                                r.faceRectangle.left + r.faceRectangle.width,
-                                r.faceRectangle.top + r.faceRectangle.height,
-                                paint);
+                        if      (r.scores.anger     > 0.60) mTextView.append(String.format("\t โกรธ : \t%.2f %%\n", r.scores.anger*100));
+                        else if (r.scores.contempt  > 0.60) mTextView.append(String.format("\t กำลังดูถูกคน : \t%.2f %%\n", r.scores.contempt*100));
+                        else if (r.scores.disgust   > 0.60) mTextView.append(String.format("\t รังเกียจ : \t%.2f %%\n", r.scores.disgust*100));
+                        else if (r.scores.fear      > 0.60) mTextView.append(String.format("\t กลัว : \t%.2f %%\n", r.scores.fear*100));
+                        else if (r.scores.happiness > 0.60) mTextView.append(String.format("\t มีความสุข : \t%.2f %%\n", r.scores.happiness*100));
+                        else if (r.scores.neutral   > 0.60) mTextView.append(String.format("\t นิ่งเฉย : \t%.2f %%\n", r.scores.neutral*100));
+                        else if (r.scores.sadness   > 0.60) mTextView.append(String.format("\t โศกเศร้า : \t%.2f %%\n", r.scores.sadness*100));
+                        else if (r.scores.surprise  > 0.60) mTextView.append(String.format("\t เซอร์ไพร์ : \t%.2f %%\n", r.scores.surprise*100));
+                        else                                mTextView.append(String.format("\t ไม่พบอารมณ์ความรู้สึก \n"));
+
                         count++;
                     }
                     ImageView imageView = (ImageView) findViewById(R.id.selectedImage);
                     imageView.setImageDrawable(new BitmapDrawable(getResources(), mBitmap));
                 }
-                //mTextView.setSelection(0);
             }
-
             mButtonSelectImage.setEnabled(true);
         }
     }
