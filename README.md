@@ -1,7 +1,9 @@
 # FaceEmotion
-Android Project 
+Android App 
 
-Mobile App Face Emotion with Microsoft Emotion API
+Face Emotion with Microsoft Emotion API and SDK
+
+Subport minimum android 4.4.4 
 
 > Install versions english /apk/FaceEmotion_1.0.apk
 
