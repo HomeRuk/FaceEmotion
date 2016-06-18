@@ -1,11 +1,11 @@
 <resources>
-    <string name="app_name">Face Emotion</string>
+    <string name="app_name">DetectorEmoKan</string>
 
     <!-- Emotion subscription key -->
     <!-- Please refer to https://www.projectoxford.ai/ to get your subscription key -->
     <!-- If you have one subscription key, you can add it here to use the service -->
-    <string name="subscription_key">0c6e8987c75047479d3c6be484534e8e</string>
-    
+    <string name="subscription_key">3d15c6e76c714c7ab7bc94b2e23e326c</string>
+
     <!-- Display strings -->
     <string name="add_subscription_key_tip_title">Subscription Key is Needed</string>
     <string name="add_subscription_key_tip">Please put your two subscription keys for Emotion API/Face API to source file \"app/res/values/strings.xml\" to enable Emotion API and Face API calls.</string>
@@ -15,7 +15,7 @@
     <string name="title_activity_thumbnail">ThumbnailActivity</string>
 
     <!-- Select image activity -->
-    <string name="select_an_image">Select an Image</string>
+    <string name="select_an_image">เลือกรูปภาพ</string>
     <string name="select_image_in_album">From Gallery</string>
 
 </resources>
