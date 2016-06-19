@@ -1,4 +1,4 @@
-# FaceEmotion
+# FaceEmotion (DetectorEmoKan)
 Android App 
 
 Face Emotion with Microsoft Emotion API and SDK
@@ -14,6 +14,10 @@ Subport minimum android 4.4.4
 > ติดตั้ง เวอร์ชันไทย /apk/FaceEmotion_1.1.apk
 
 > https://github.com/HomeRuk/FaceEmotion/blob/master/apk/FaceEmotion_1.1.apk
+
+> ติดตั้ง เวอร์ชันไทย2 /apk/FaceEmotion_1.2.apk
+
+> https://github.com/HomeRuk/FaceEmotion/blob/master/apk/FaceEmotion_1.2.apk
 
 # Detail Emotion 
 > Emotion display percent > 60 แสดงอารมณ์ความรู้สึกเมือมีความรู้สึกนั้น มากกว่า60 %
