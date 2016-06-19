@@ -46,8 +46,8 @@ public class MainActivity extends AppCompatActivity {
 
     private EmotionServiceClient client;
 
-    private String textIntro = "แอปพลิเคชันวิเคราะห์อารมณ์จากรูปภาพ";
-    private String textIntro2 = "กรุณาเลือกรูปภาพ เพื่อวิเคราะห์อารมณ์";
+    private String textIntro = "แอปพลิเคชันวิเคราะห์อารมณ์จากรูปภาพ\n\nกรุณาเลือกรูปภาพ เพื่อวิเคราะห์อารมณ์";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,9 +62,6 @@ public class MainActivity extends AppCompatActivity {
 
         Toast toastIntro = Toast.makeText(MainActivity.this, textIntro, Toast.LENGTH_LONG);
         toastIntro.show();
-
-        Toast toastIntro2 = Toast.makeText(MainActivity.this, textIntro2, Toast.LENGTH_LONG);
-        toastIntro2.show();
     }
 
     public void doRecognize() {
@@ -171,7 +168,7 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                     int count = 0;
 
-                    Toast toastReselt = Toast.makeText(MainActivity.this, "วิเคราะห์สำเร็จ เย้ๆ", Toast.LENGTH_LONG);
+                    Toast toastReselt = Toast.makeText(MainActivity.this, "\t\t\tวิเคราะห์สำเร็จ\n\n เลื่อนดูผลการวิเคราะห์", Toast.LENGTH_LONG);
                     toastReselt.show();
 
                     for (RecognizeResult r : result) {

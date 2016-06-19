@@ -2,88 +2,74 @@
 <items version="2" >
 
     <item
-        jar="C:\Users\Pr3a\AndroidStudioProjects\Emotion\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
-        jumboMode="true"
+        jar="C:\Users\Pr3a\AndroidStudioProjects\FaceEmotion\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.4.0\jars\classes.jar"
+        jumboMode="false"
         revision="23.0.3"
-        sha1="dc478a50f7d87491dc502613c1a47a1cbf20ac0f">
-        <dex dex="C:\Users\Pr3a\AndroidStudioProjects\Emotion\app\build\intermediates\pre-dexed\debug\instant-run-bootstrap_dbfbd8d1f76f2e2fd81f6c600bdef8ce76c50d14.jar" />
+        sha1="67bd36ee9340ec7c254108936ad16b24bed160cc">
+        <dex dex="C:\Users\Pr3a\AndroidStudioProjects\FaceEmotion\app\build\intermediates\pre-dexed\release\com.android.support-support-v4-23.4.0_f1b3a1dc2526615198962a2634c84abc261bc412.jar" />
+    </item>
+    <item
+        jar="C:\Users\Pr3a\AndroidStudioProjects\FaceEmotion\app\build\intermediates\exploded-aar\com.microsoft.projectoxford\emotion\1.0.0\jars\libs\commons-io-2.4.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="b1b6ea3b7e4aa4f492509a4952029cd8e48019ad">
+        <dex dex="C:\Users\Pr3a\AndroidStudioProjects\FaceEmotion\app\build\intermediates\pre-dexed\release\commons-io-2.4_c3ad5629fb19e3a45b1aac9a518286346e43ba04.jar" />
     </item>
     <item
         jar="C:\Users\Pr3a\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.4.0\support-annotations-23.4.0.jar"
-        jumboMode="true"
+        jumboMode="false"
         revision="23.0.3"
         sha1="ffbe55fdb2bb456b1485831706a9eac3300bb6b8">
-        <dex dex="C:\Users\Pr3a\AndroidStudioProjects\Emotion\app\build\intermediates\pre-dexed\debug\support-annotations-23.4.0_43370ff987929558687974bf855c48c75a9b6372.jar" />
+        <dex dex="C:\Users\Pr3a\AndroidStudioProjects\FaceEmotion\app\build\intermediates\pre-dexed\release\support-annotations-23.4.0_43370ff987929558687974bf855c48c75a9b6372.jar" />
     </item>
     <item
-        jar="C:\Users\Pr3a\AndroidStudioProjects\Emotion\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
-        jumboMode="true"
-        revision="23.0.3"
-        sha1="ebb7eaad5cd5b3861a1d18e3f4e61c9f3af020f3">
-        <dex dex="C:\Users\Pr3a\AndroidStudioProjects\Emotion\app\build\intermediates\pre-dexed\debug\instant-run_8e3c5f6dc4a959f1ce3b9896ed9cbba6c169947c.jar" />
-    </item>
-    <item
-        jar="C:\Users\Pr3a\AndroidStudioProjects\Emotion\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.4.0\jars\libs\internal_impl-23.4.0.jar"
-        jumboMode="true"
-        revision="23.0.3"
-        sha1="ea3c07504d2c8f4b13aa17c45c1b68ed9c1c3674">
-        <dex dex="C:\Users\Pr3a\AndroidStudioProjects\Emotion\app\build\intermediates\pre-dexed\debug\internal_impl-23.4.0_cfe0ab51daa28726565b2b5169d4f11e214cabe9.jar" />
-    </item>
-    <item
-        jar="C:\Users\Pr3a\AndroidStudioProjects\Emotion\app\build\intermediates\exploded-aar\com.microsoft.projectoxford\face\1.0.0\jars\classes.jar"
-        jumboMode="true"
-        revision="23.0.3"
-        sha1="b9885b9cbfc39129a13674d39d0cae321fc0dc97">
-        <dex dex="C:\Users\Pr3a\AndroidStudioProjects\Emotion\app\build\intermediates\pre-dexed\debug\com.microsoft.projectoxford-face-1.0.0_54b986b6b7ac8cb25180473f92deaca9b0433a6e.jar" />
-    </item>
-    <item
-        jar="C:\Users\Pr3a\AndroidStudioProjects\Emotion\app\build\intermediates\exploded-aar\com.microsoft.projectoxford\emotion\1.0.0\jars\classes.jar"
-        jumboMode="true"
-        revision="23.0.3"
-        sha1="85580f7e643f4e319878f282874afccc3b1b95ed">
-        <dex dex="C:\Users\Pr3a\AndroidStudioProjects\Emotion\app\build\intermediates\pre-dexed\debug\com.microsoft.projectoxford-emotion-1.0.0_64692fb2d2c6e0f65cad6bc50dba4678640d561d.jar" />
-    </item>
-    <item
-        jar="C:\Users\Pr3a\AndroidStudioProjects\Emotion\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.4.0\jars\classes.jar"
-        jumboMode="true"
+        jar="C:\Users\Pr3a\AndroidStudioProjects\FaceEmotion\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.4.0\jars\classes.jar"
+        jumboMode="false"
         revision="23.0.3"
         sha1="548f06de403a9409f00554b3ee12a9fdea0e236c">
-        <dex dex="C:\Users\Pr3a\AndroidStudioProjects\Emotion\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-23.4.0_7d9bdae0f2e59c5705caf2e4b547b1352af51d16.jar" />
+        <dex dex="C:\Users\Pr3a\AndroidStudioProjects\FaceEmotion\app\build\intermediates\pre-dexed\release\com.android.support-appcompat-v7-23.4.0_a59d46e1948dbff0e0ad384b444e4f9fbfc48c38.jar" />
     </item>
     <item
-        jar="C:\Users\Pr3a\AndroidStudioProjects\Emotion\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.4.0\jars\classes.jar"
-        jumboMode="true"
-        revision="23.0.3"
-        sha1="67bd36ee9340ec7c254108936ad16b24bed160cc">
-        <dex dex="C:\Users\Pr3a\AndroidStudioProjects\Emotion\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-23.4.0_992a0468ccbca36a5381ed054f27fa8e4c8e6aa9.jar" />
-    </item>
-    <item
-        jar="C:\Users\Pr3a\AndroidStudioProjects\Emotion\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\23.4.0\jars\classes.jar"
-        jumboMode="true"
-        revision="23.0.3"
-        sha1="de4db3785756bfb0915a9f59a9b3f2fea7407be4">
-        <dex dex="C:\Users\Pr3a\AndroidStudioProjects\Emotion\app\build\intermediates\pre-dexed\debug\com.android.support-animated-vector-drawable-23.4.0_fa16dcee1c9131b1ffa5bd44e99129c9dca0222f.jar" />
-    </item>
-    <item
-        jar="C:\Users\Pr3a\AndroidStudioProjects\Emotion\app\build\intermediates\exploded-aar\com.microsoft.projectoxford\emotion\1.0.0\jars\libs\commons-io-2.4.jar"
-        jumboMode="true"
-        revision="23.0.3"
-        sha1="b1b6ea3b7e4aa4f492509a4952029cd8e48019ad">
-        <dex dex="C:\Users\Pr3a\AndroidStudioProjects\Emotion\app\build\intermediates\pre-dexed\debug\commons-io-2.4_33b1c2dba56886a17249d6389705a666b4f3a118.jar" />
-    </item>
-    <item
-        jar="C:\Users\Pr3a\AndroidStudioProjects\Emotion\app\libs\gson-2.3.1.jar"
-        jumboMode="true"
+        jar="C:\Users\Pr3a\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.3.1\ecb6e1f8e4b0e84c4b886c2f14a1500caf309757\gson-2.3.1.jar"
+        jumboMode="false"
         revision="23.0.3"
         sha1="ecb6e1f8e4b0e84c4b886c2f14a1500caf309757">
-        <dex dex="C:\Users\Pr3a\AndroidStudioProjects\Emotion\app\build\intermediates\pre-dexed\debug\gson-2.3.1_6f4db3bb5edb5368991fdd05e65a3208359ce7f1.jar" />
+        <dex dex="C:\Users\Pr3a\AndroidStudioProjects\FaceEmotion\app\build\intermediates\pre-dexed\release\gson-2.3.1_7f5c861accfdb6a0208ed3db0885a303101111b7.jar" />
     </item>
     <item
-        jar="C:\Users\Pr3a\AndroidStudioProjects\Emotion\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.4.0\jars\classes.jar"
-        jumboMode="true"
+        jar="C:\Users\Pr3a\AndroidStudioProjects\FaceEmotion\app\build\intermediates\exploded-aar\com.microsoft.projectoxford\face\1.0.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="b9885b9cbfc39129a13674d39d0cae321fc0dc97">
+        <dex dex="C:\Users\Pr3a\AndroidStudioProjects\FaceEmotion\app\build\intermediates\pre-dexed\release\com.microsoft.projectoxford-face-1.0.0_53cbc50f80eba062a998289c77f6eac0b59a53ff.jar" />
+    </item>
+    <item
+        jar="C:\Users\Pr3a\AndroidStudioProjects\FaceEmotion\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.4.0\jars\libs\internal_impl-23.4.0.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="ea3c07504d2c8f4b13aa17c45c1b68ed9c1c3674">
+        <dex dex="C:\Users\Pr3a\AndroidStudioProjects\FaceEmotion\app\build\intermediates\pre-dexed\release\internal_impl-23.4.0_57dbe29197db52af0350d3efb90004dd84c314e5.jar" />
+    </item>
+    <item
+        jar="C:\Users\Pr3a\AndroidStudioProjects\FaceEmotion\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\23.4.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="de4db3785756bfb0915a9f59a9b3f2fea7407be4">
+        <dex dex="C:\Users\Pr3a\AndroidStudioProjects\FaceEmotion\app\build\intermediates\pre-dexed\release\com.android.support-animated-vector-drawable-23.4.0_7ee2bbb2d268fa73805240bcf7bf99d3bb0ba4b3.jar" />
+    </item>
+    <item
+        jar="C:\Users\Pr3a\AndroidStudioProjects\FaceEmotion\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.4.0\jars\classes.jar"
+        jumboMode="false"
         revision="23.0.3"
         sha1="c2c594cace5d83a3227b2b6e658ecbfd586d3ed9">
-        <dex dex="C:\Users\Pr3a\AndroidStudioProjects\Emotion\app\build\intermediates\pre-dexed\debug\com.android.support-support-vector-drawable-23.4.0_1466991fe5cc962dc2be9dcd21e0b2dcc36b0eaf.jar" />
+        <dex dex="C:\Users\Pr3a\AndroidStudioProjects\FaceEmotion\app\build\intermediates\pre-dexed\release\com.android.support-support-vector-drawable-23.4.0_9a40fe542e58ba5c63a2463c5466f7ed08b711ac.jar" />
+    </item>
+    <item
+        jar="C:\Users\Pr3a\AndroidStudioProjects\FaceEmotion\app\build\intermediates\exploded-aar\com.microsoft.projectoxford\emotion\1.0.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="85580f7e643f4e319878f282874afccc3b1b95ed">
+        <dex dex="C:\Users\Pr3a\AndroidStudioProjects\FaceEmotion\app\build\intermediates\pre-dexed\release\com.microsoft.projectoxford-emotion-1.0.0_92426206a85bd6058fec1a22d46c8f958b19bef0.jar" />
     </item>
 
 </items>

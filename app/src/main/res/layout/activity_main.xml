@@ -21,10 +21,10 @@
                 android:background="#303F9F"
                 android:id="@+id/buttonSelectImage"
                 android:onClick="selectImage"
-                android:layout_below="@+id/selectedImage"
-                android:layout_centerHorizontal="true"
                 android:textColor="#ffffff"
-                android:textSize="@dimen/abc_action_bar_content_inset_material" />
+                android:textSize="@dimen/abc_action_bar_content_inset_material"
+                android:layout_below="@+id/selectedImage"
+                android:layout_alignParentStart="true" />
 
             <ImageView
                 android:id="@+id/selectedImage"
