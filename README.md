@@ -38,4 +38,4 @@ Subport minimum android 4.4.4
 
 <img src="img/1_TH.png" width="30%"/> <img src="img/2_TH.png" width="30%"/>
 
-Write by Wisit lertsaimarn  (Ruk)
+Write by Wisit lertsaimarn  (Ruk) with Microsoft Emotion API and SDK
